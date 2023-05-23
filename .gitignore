@@ -1,0 +1,3 @@
+cnn-rl/fig/*
+cnn-rl/checkpoints/manipulator/*.tar
+cnn-rl/logs/*
