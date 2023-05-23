@@ -2,12 +2,15 @@
 
 This project is a microservice resource provision system based on graph neural networks and deep reinforcement reinforcement learning. 
 
+## Architecture
 ----
 
 TARP propose a global feature extraction approach for microservices based on EGAT. Compared with current approaches that solely focus on extracting the resource requirements patterns of individual microservices, our proposed approach harnesses the causal inference capabilities of GNN to discern the correlations between microservices. By passing the features along the edges of the topology, our approach can extract correlations of microservices, which enables it to achieve transferability and global optimization. The architecture of TARP is as follow：
 
 ![arch](./fig/arch.png)
 
+
+## Program language and framework
 ----
 
 This project is developed based on the following programming languages and frameworks：
@@ -24,3 +27,11 @@ This project is developed based on the following programming languages and frame
 |Prometheus|2.33.3|
 |Grafana|8.4.1|
 |DGL|0.9.0|
+
+
+### Paper Reference
+----
+
+Zeng H, Wang T, Li A, Wu Y, Wu H, Zhang W.
+**Topology-Aware Self-Adaptive Resource Provisioning for Microservices**
+2023 IEEE International Conference on Web Services (ICWS).(accepted)
