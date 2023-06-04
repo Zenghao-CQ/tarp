@@ -1,35 +1,19 @@
-import numpy as np
 import matplotlib.pyplot as plt
-from scipy import stats
 import random
-
-# plt.rcParams["figure.figsize"] = (12.8,6)
+import scipy.signal
 plt.rc('font', family="Times New Roman")
-numb=100
-def readx(filename,d):
-    f=open(filename)
-    s=f.readline()
-    x=s.split(',')
-    x=[float(i) for i in x]
-    f.close()
-    return x
 
-x=readx("../ours/avg.csv",0)
-
-x1=readx("../firm/avg-1.csv",0)
-
-x2=readx("../sinan/avg.csv",0)
-plt.plot(x,marker="x",color="tomato",label="Ours")
-plt.plot(x1,marker="*",color="royalblue",label="Firm")
-plt.plot(x2,marker="*",color="darkviolet",label="Sinan")
-
-plt.tick_params(labelsize=12)
-# plt.plot(x,y,color="tomato",label="Ours")
-# plt.plot(x1,y1,color="royalblue",label="Firm")
-# plt.plot(x3,y3,color="darkviolet",label="Sinan")
-plt.legend()
-plt.xlabel('Time inteval',fontsize=14)
-plt.ylabel('CDF',fontsize=14)
-plt.show()
-# plt.legend(prop={'size':16})
-# plt.savefig("./cdf.png")
+f=open("./reward.csv")
+s=f.readline()
+graph1=s.split(',')
+graph1=[float(x) for x in graph1]
+plt.cla()
+plt.tick_params(labelsize=13)
+plt.plot(graph1, color='bisque')  # total rewards in an iteration or episode
+# plt.plot(avg_rewards, color='b')  # (moving avg) rewards
+tmp = scipy.signal.savgol_filter(graph1, 55, 3)
+plt.plot(tmp, color='darkorange')  # total rewards in an iteration or episode
+plt.xlabel('Episodes',fontsize=15)
+plt.ylabel('Reward',fontsize=15)
+# plt.show()
+plt.savefig('./reward.png')

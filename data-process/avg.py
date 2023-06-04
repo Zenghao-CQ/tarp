@@ -17,5 +17,5 @@ def readx(filename):
         print(t)
     return x
 x=readx("./ours/resource.csv")
-x=readx("./firm/resource-1.csv")
-x=readx("./sinan/resource.csv")
+x=readx("./SVMRL/resource-1.csv")
+x=readx("./CNNRL/resource.csv")
