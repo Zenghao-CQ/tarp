@@ -24,6 +24,6 @@ if __name__=="__main__":
     agent = DDPG(env)
     
     # init from saved checkpoints
-    agent.loadCheckpoint(CHECKPOINT_FILE)
+    # agent.loadCheckpoint(CHECKPOINT_FILE)
     # start training
     agent.train()
